@@ -20,11 +20,76 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    @for (item of customersList; track $index) {
+                                    <tr>
+                                        <td>{{$index+1}}</td>
+                                        <td>{{item.customerName}}</td>
+                                        <td>{{item.customerCity}}</td>
+                                        <td>{{item.mobileNo}}</td>
+                                        <td>{{item.email}}</td>
+                                        <td>
+                                            <button class="btn btn-primary" (click)="onEditCustomer(item)">Edit</button>
+                                            <button class="btn btn-danger" (click)="onDeleteCustomer(item.customerId)">Delete</button>
+                                        </td>
+                                    </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header bg-dark text-white">
+                    New Customer
+                </div>
+                <div class="card-body">
+                    <form #form="ngForm">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="">Name</label>
+                                <input type="text" #personName="ngModel" minlength="3" required name="customerName"
+                                    [(ngModel)]="customerObj.customerName" class="form-control">
+                                @if (personName.touched) {
+                                <div class="text-danger">
+                                    @if (personName?.errors?.['required']) {
+                                    <span>This field is required</span>
+                                    }
+                                    @if (personName?.errors?.['minlength']) {
+                                    <span>Min 3 characters required</span>
+                                    }
+                                </div>
+                                }
+                            </div>
+                            <div class="col-6">
+                                <label for="">City</label>
+                                <input type="text" [(ngModel)]="customerObj.customerCity" class="form-control" name="customerCity">
+                            </div>
+                            <div class="col-6">
+                                <label for="">MobileNo</label>
+                                <input type="text" [(ngModel)]="customerObj.mobileNo" class="form-control" name="mobileNo">
+                            </div>
+                            <div class="col-6">
+                                <label for="">Email</label>
+                                <input type="text" [(ngModel)]="customerObj.email" class="form-control" name="email">
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6 text-center">
+                                <button class="btn btn-secondary" (click)="onReset()">Reset</button>
+                            </div>
+                            <div class="col-6 text-center">
+                                <button class="btn btn-success" [disabled]="!form.valid"
+                                    (click)="customerObj.customerId != 0 ? onUpdateCustomer() : onSaveCustomer()">
+                                    {{customerObj.customerId != 0 ? 'Update Customer' : 'Save Customer'}}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
