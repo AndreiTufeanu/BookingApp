@@ -29,7 +29,7 @@
                                         <td>{{item.mobileNo}}</td>
                                         <td>{{item.brand}} {{item.model}}</td>
                                         <td>{{item.totalBillAmount}}</td>
-                                        <td>
+                                        <td class="action-column">
                                             <button class="btn btn-danger" (click)="onDeleteBooking(item.bookingId)">Delete</button>
                                         </td>
                                     </tr>
@@ -54,6 +54,7 @@
                             <div class="col-6">
                                 <label for="">Customer</label>
                                 <select formControlName="customerById" class="form-control" (change)="onCustomerChange($event)">
+                                    <option value="" disabled selected>Select a customer</option>
                                     @for (item of customersList; track $index) {
                                         <option [value]="item.customerId">{{item.customerName}} - {{item.email}}</option>
                                     }
@@ -83,7 +84,7 @@
                                 <button class="btn btn-secondary" (click)="onReset()">Reset</button>
                             </div>
                             <div class="col-6 text-center">
-                                <button class="btn btn-success" [disabled]="!form.valid"
+                                <button class="btn success" [disabled]="!form.valid"
                                     (click)="onSaveBooking()">
                                     Save Booking
                                 </button>

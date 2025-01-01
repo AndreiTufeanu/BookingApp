@@ -27,7 +27,7 @@
                                         <td>{{item.customerCity}}</td>
                                         <td>{{item.mobileNo}}</td>
                                         <td>{{item.email}}</td>
-                                        <td>
+                                        <td class="action-column">
                                             <button class="btn btn-primary" (click)="onEditCustomer(item)">Edit</button>
                                             <button class="btn btn-danger" (click)="onDeleteCustomer(item.customerId)">Delete</button>
                                         </td>
@@ -87,7 +87,7 @@
                                 <button class="btn btn-secondary" (click)="onReset()">Reset</button>
                             </div>
                             <div class="col-6 text-center">
-                                <button class="btn btn-success" [disabled]="!form.valid"
+                                <button class="btn success" [disabled]="!form.valid"
                                     (click)="customerObj.customerId != 0 ? onUpdateCustomer() : onSaveCustomer()">
                                     {{customerObj.customerId != 0 ? 'Update Customer' : 'Save Customer'}}
                                 </button>

@@ -1,0 +1,63 @@
+.card-body {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.table tbody tr {
+    text-align: center;
+}
+
+.table td, .table th {
+    padding: 4px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.table {
+    table-layout: fixed; 
+    width: 100%;
+}
+
+.table td {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+td.action-column {
+    align-items: center;
+    width: 100px; 
+    white-space: nowrap; 
+}
+
+td.action-column button {
+    width: 80%; 
+    margin-top: 5px;
+    margin-bottom: 5px; 
+}
+
+.success {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+    border-width: 3px;
+    color: white;
+}
+
+.success:hover {
+    background-color: #c0392b;
+    border-color: #a93226;
+}
+
+.btn-success:hover {
+    background-color: #ea3127;
+    border-color: #e5554d;
+}

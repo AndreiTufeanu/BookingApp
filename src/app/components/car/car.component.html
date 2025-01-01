@@ -27,7 +27,7 @@
                                         <td>{{item.model}}</td>
                                         <td>{{item.regNo}}</td>
                                         <td>{{item.year}}</td>
-                                        <td>
+                                        <td class="action-column">
                                             <button class="btn btn-primary" (click)="onEditCar(item)">Edit</button>
                                             <button class="btn btn-danger" (click)="onDeleteCar(item.carId)">Delete</button>
                                         </td>
@@ -83,7 +83,7 @@
                                 <button class="btn btn-secondary" (click)="onReset()">Reset</button>
                             </div>
                             <div class="col-6 text-center">
-                                <button class="btn btn-success" [disabled]="!form.valid"
+                                <button class="btn success" [disabled]="!form.valid"
                                     (click)="carObj.carId != 0 ? onUpdateCar() : onSaveCar()">
                                     {{carObj.carId != 0 ? 'Update Car' : 'Save Car'}}
                                 </button>
