@@ -21,11 +21,75 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    @for (item of bookingList; track $index) {
+                                    <tr>
+                                        <td>{{$index+1}}</td>
+                                        <td>{{item.bookingDate}}</td>
+                                        <td>{{item.customerName}}</td>
+                                        <td>{{item.mobileNo}}</td>
+                                        <td>{{item.brand}} {{item.model}}</td>
+                                        <td>{{item.totalBillAmount}}</td>
+                                        <td>
+                                            <button class="btn btn-danger" (click)="onDeleteBooking(item.bookingId)">Delete</button>
+                                        </td>
+                                    </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header bg-dark text-white">
+                    New Booking
+                </div>
+                <div class="card-body">
+                    <form #form="ngForm">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="">Customer</label>
+                                <select formControlName="customerById" class="form-control" (change)="onCustomerChange($event)">
+                                    @for (item of customersList; track $index) {
+                                        <option [value]="item.customerId">{{item.customerName}} - {{item.email}}</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="">Car</label>
+                                <select [(ngModel)]="bookingObj.carId" name="carId" class="form-control">
+                                    @for (item of carsList; track $index) {
+                                        <option [value]="item.carId">{{item.brand}} {{item.model}}</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label for="">Booking Date</label>
+                                <input type="date" required name="bookingDate"
+                                    [(ngModel)]="bookingObj.bookingDate" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label for="">Bill Amount</label>
+                                <input type="text" [(ngModel)]="bookingObj.totalBillAmount" class="form-control" name="totalBillAmount">
+                            </div>
+
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6 text-center">
+                                <button class="btn btn-secondary" (click)="onReset()">Reset</button>
+                            </div>
+                            <div class="col-6 text-center">
+                                <button class="btn btn-success" [disabled]="!form.valid"
+                                    (click)="onSaveBooking()">
+                                    Save Booking
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
