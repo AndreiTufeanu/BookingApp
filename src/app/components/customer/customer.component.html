@@ -52,34 +52,58 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="customerName">Name</label>
-                                <input type="text" id="customerName" #personName="ngModel" minlength="3" required 
+                                <input type="text" id="customerName" #customerName="ngModel" minlength="3" required 
                                     name="customerName" [(ngModel)]="customerObj.customerName" class="form-control" 
                                     autocomplete="name">
-                                @if (personName.touched) {
-                                <div class="text-danger">
-                                    @if (personName?.errors?.['required']) {
-                                    <span>This field is required</span>
-                                    }
-                                    @if (personName?.errors?.['minlength']) {
-                                    <span>Min 3 characters required</span>
-                                    }
-                                </div>
+                                @if (customerName.touched) {
+                                    <div class="text-danger">
+                                        @if (customerName?.errors?.['required']) {
+                                            <span>This field is required</span>
+                                        }
+                                        @if (customerName?.errors?.['minlength']) {
+                                            <span>Min 3 characters required</span>
+                                        }
+                                    </div>
                                 }
                             </div>
                             <div class="col-6">
                                 <label for="customerCity">City</label>
-                                <input type="text" id="customerCity" [(ngModel)]="customerObj.customerCity" 
+                                <input type="text" id="customerCity" #customerCity="ngModel" required [(ngModel)]="customerObj.customerCity" 
                                     class="form-control" name="customerCity" autocomplete="address-level2">
+                                @if (customerCity.touched) {
+                                    <div class="text-danger">
+                                        @if (customerCity?.errors?.['required']) {
+                                            <span>This field is required</span>
+                                        }
+                                    </div>
+                                }
                             </div>
                             <div class="col-6">
                                 <label for="customerMobileNo">MobileNo</label>
-                                <input type="text" id="customerMobileNo" [(ngModel)]="customerObj.mobileNo" 
+                                <input type="text" id="customerMobileNo" #phoneNumber="ngModel" required minlength="10" [(ngModel)]="customerObj.mobileNo" 
                                     class="form-control" name="mobileNo" autocomplete="tel">
+                                @if (phoneNumber.touched) {
+                                    <div class="text-danger">
+                                        @if (phoneNumber?.errors?.['required']) {
+                                            <span>This field is required</span>
+                                        }
+                                        @if (phoneNumber?.errors?.['minlength']) {
+                                            <span>Min 10 digits required</span>
+                                        }
+                                    </div>
+                                }
                             </div>
                             <div class="col-6">
                                 <label for="customerEmail">Email</label>
-                                <input type="email" id="customerEmail" [(ngModel)]="customerObj.email" 
+                                <input type="email" id="customerEmail" #customerEmail="ngModel" required [(ngModel)]="customerObj.email" 
                                     class="form-control" name="email" autocomplete="email">
+                                @if (customerEmail.touched) {
+                                    <div class="text-danger">
+                                        @if (customerEmail?.errors?.['required']) {
+                                            <span>This field is required</span>
+                                        }
+                                    </div>
+                                }
                             </div>
                         </div>
                         <div class="row pt-2">
