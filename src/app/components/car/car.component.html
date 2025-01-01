@@ -22,7 +22,7 @@
                                 <tbody>
                                     @for (item of carList; track $index) {
                                     <tr>
-                                        <td>{{$index+1}}</td>
+                                        <td>{{$index + 1}}</td>
                                         <td>{{item.brand}}</td>
                                         <td>{{item.model}}</td>
                                         <td>{{item.regNo}}</td>
@@ -51,8 +51,8 @@
                     <form #form="ngForm">
                         <div class="row">
                             <div class="col-6">
-                                <label for="">Car Brand</label>
-                                <input type="text" #personName="ngModel" minlength="3" required name="brand"
+                                <label for="carBrand">Car Brand</label>
+                                <input type="text" id="carBrand" #personName="ngModel" minlength="3" required name="brand"
                                     [(ngModel)]="carObj.brand" class="form-control">
                                 @if (personName.touched) {
                                 <div class="text-danger">
@@ -66,16 +66,16 @@
                                 }
                             </div>
                             <div class="col-6">
-                                <label for="">Model</label>
-                                <input type="text" [(ngModel)]="carObj.model" class="form-control" name="model">
+                                <label for="carModel">Model</label>
+                                <input type="text" id="carModel" [(ngModel)]="carObj.model" class="form-control" name="model">
                             </div>
                             <div class="col-6">
-                                <label for="">RegNo</label>
-                                <input type="text" [(ngModel)]="carObj.regNo" class="form-control" name="regNo">
+                                <label for="carRegNo">RegNo</label>
+                                <input type="text" id="carRegNo" [(ngModel)]="carObj.regNo" class="form-control" name="regNo">
                             </div>
                             <div class="col-6">
-                                <label for="">Year</label>
-                                <input type="text" [(ngModel)]="carObj.year" class="form-control" name="year">
+                                <label for="carYear">Year</label>
+                                <input type="text" id="carYear" [(ngModel)]="carObj.year" class="form-control" name="year">
                             </div>
                         </div>
                         <div class="row pt-2">

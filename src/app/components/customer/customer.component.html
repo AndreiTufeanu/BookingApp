@@ -22,7 +22,7 @@
                                 <tbody>
                                     @for (item of customersList; track $index) {
                                     <tr>
-                                        <td>{{$index+1}}</td>
+                                        <td>{{$index + 1}}</td>
                                         <td>{{item.customerName}}</td>
                                         <td>{{item.customerCity}}</td>
                                         <td>{{item.mobileNo}}</td>
@@ -51,9 +51,10 @@
                     <form #form="ngForm">
                         <div class="row">
                             <div class="col-6">
-                                <label for="">Name</label>
-                                <input type="text" #personName="ngModel" minlength="3" required name="customerName"
-                                    [(ngModel)]="customerObj.customerName" class="form-control">
+                                <label for="customerName">Name</label>
+                                <input type="text" id="customerName" #personName="ngModel" minlength="3" required 
+                                    name="customerName" [(ngModel)]="customerObj.customerName" class="form-control" 
+                                    autocomplete="name">
                                 @if (personName.touched) {
                                 <div class="text-danger">
                                     @if (personName?.errors?.['required']) {
@@ -66,16 +67,19 @@
                                 }
                             </div>
                             <div class="col-6">
-                                <label for="">City</label>
-                                <input type="text" [(ngModel)]="customerObj.customerCity" class="form-control" name="customerCity">
+                                <label for="customerCity">City</label>
+                                <input type="text" id="customerCity" [(ngModel)]="customerObj.customerCity" 
+                                    class="form-control" name="customerCity" autocomplete="address-level2">
                             </div>
                             <div class="col-6">
-                                <label for="">MobileNo</label>
-                                <input type="text" [(ngModel)]="customerObj.mobileNo" class="form-control" name="mobileNo">
+                                <label for="customerMobileNo">MobileNo</label>
+                                <input type="text" id="customerMobileNo" [(ngModel)]="customerObj.mobileNo" 
+                                    class="form-control" name="mobileNo" autocomplete="tel">
                             </div>
                             <div class="col-6">
-                                <label for="">Email</label>
-                                <input type="text" [(ngModel)]="customerObj.email" class="form-control" name="email">
+                                <label for="customerEmail">Email</label>
+                                <input type="email" id="customerEmail" [(ngModel)]="customerObj.email" 
+                                    class="form-control" name="email" autocomplete="email">
                             </div>
                         </div>
                         <div class="row pt-2">
