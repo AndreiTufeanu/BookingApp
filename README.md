@@ -10,6 +10,11 @@ This project is deployed on GitHub Pages. You can access it at the following lin
 
 **Note:** The API calls in the deployed version of the app are not functional due to API restrictions that prevent usage from this environment.
 
+## Technologies Used
+
+- **Angular**: A platform for building modern web applications.
+- **Bootstrap**: A front-end framework for responsive design and styling.
+
 ## Development server
 
 To start a local development server, run:
