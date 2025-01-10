@@ -2,6 +2,14 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
 
+## GitHub Pages Deployment
+
+This project is deployed on GitHub Pages. You can access it at the following link:
+
+[BookingApp GitHub Pages](https://andreitufeanu.github.io/BookingApp/)
+
+**Note:** The API calls in the deployed version of the app are not functional due to API restrictions that prevent usage from this environment.
+
 ## Development server
 
 To start a local development server, run:
