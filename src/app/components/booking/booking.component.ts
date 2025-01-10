@@ -39,10 +39,6 @@ export class BookingComponent {
     })
     this.bookingService.getAllBookings().subscribe((res: APIResponseModel) => {
       this.bookingList = res.data;
-      console.log('Bookings List:');
-      this.bookingList.forEach((booking, index) => {
-        console.log(`Booking ${index + 1}:`, booking);
-      });
     })
   }
 

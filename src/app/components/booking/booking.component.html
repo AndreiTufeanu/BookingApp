@@ -52,28 +52,28 @@
                     <form #form="ngForm">
                         <div class="row">
                             <div class="col-6">
-                                <label for="">Customer</label>
-                                <select formControlName="customerById" required class="form-control" (change)="onCustomerChange($event)">
+                                <label for="customerById">Customer</label>
+                                <select id="customerById" required class="form-control" (change)="onCustomerChange($event)">
                                     @for (item of customersList; track $index) {
                                         <option [value]="item.customerId">{{item.customerName}} - {{item.email}}</option>
                                     }
                                 </select>
                             </div>
                             <div class="col-6">
-                                <label for="">Car</label>
-                                <select [(ngModel)]="bookingObj.carId" required name="carId" class="form-control">
+                                <label for="carId">Car</label>
+                                <select [(ngModel)]="bookingObj.carId" required name="carId" class="form-control" id="carId">
                                     @for (item of carsList; track $index) {
                                         <option [value]="item.carId">{{item.brand}} {{item.model}}</option>
                                     }
                                 </select>
                             </div>
                             <div class="col-6">
-                                <label for="">Booking Date</label>
-                                <input type="date" name="bookingDate" [(ngModel)]="bookingObj.bookingDate" class="form-control">
+                                <label for="bookingDate">Booking Date</label>
+                                <input id="bookingDate" type="date" name="bookingDate" [(ngModel)]="bookingObj.bookingDate" class="form-control">
                             </div>
                             <div class="col-6">
-                                <label for="">Bill Amount</label>
-                                <input type="text" #billAmount="ngModel" required [(ngModel)]="bookingObj.totalBillAmount" class="form-control" name="totalBillAmount">
+                                <label for="totalBillAmount">Bill Amount</label>
+                                <input id="totalBillAmount" type="text" #billAmount="ngModel" [(ngModel)]="bookingObj.totalBillAmount" class="form-control" required name="totalBillAmount">
                                 @if (billAmount.touched) {
                                     <div class="text-danger">
                                         @if (billAmount?.errors?.['required']) {
