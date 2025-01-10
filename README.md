@@ -8,7 +8,9 @@ This project is deployed on GitHub Pages. You can access it at the following lin
 
 [BookingApp GitHub Pages](https://andreitufeanu.github.io/BookingApp/)
 
-**Note:** The API calls in the deployed version of the app are not functional due to API restrictions that prevent usage from this environment.
+> **⚠️ Important Note:**  
+> The API calls in the deployed version of the app **are not functional** due to **API restrictions** that prevent usage from this environment. 
+> This means that certain features, such as retrieving data or submitting forms, will not work as expected on the live version.
 
 ## Technologies Used
 
